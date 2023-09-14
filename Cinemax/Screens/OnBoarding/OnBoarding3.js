@@ -8,7 +8,7 @@ const OnBoarding3 = () => {
   const navigation = useNavigation();
 
   const nextPage = () => {
-    navigation.navigate('OnBoarding3')
+    navigation.navigate('OnBoarding4')
   }
 
   return (
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     paddingTop: 48,
   },
   rating: {
-    width: 70,
-    height: 90,
+    width: 75,
+    height: 95,
     borderRadius: 15,
     left: -320,
     top: -565,
