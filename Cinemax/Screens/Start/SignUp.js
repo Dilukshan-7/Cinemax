@@ -9,27 +9,28 @@ const SignUp = ({ navigation }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
 
-  const handleSignUp = () => {
-    navigation.navigate('Home');
-  }
+  // const handleSignUp = () => {
+  //   navigation.navigate('Home');
+  // }
 
-  // const handleSignUp = async() => {
-  //   if (fullName && email && password && agreeTerms) {
-  //     await auth().createUserWithEmailAndPassword(email, password)
-  //       .then((userCredential) => {
-  //         // Registration successful.
-  //         console.log('User registered successfully:', userCredential.user);
-  //         //navigate to login screen
-  //         navigation.navigate('Login');
-  //       })
-  //       .catch((error) => {
-  //         // Handle registration error
-  //         const errorMessage = error.message;
-  //         console.error('Registration error:', errorMessage);
-  //         //display an error message to the user if needed
-  //       });
-  //   }
-  // };
+  const handleSignUp = async() => {
+    if (fullName !== '' && email !== '' && password !== '' && agreeTerms !== '') {     
+        try {
+          await auth().createUserWithEmailAndPassword(email, password)
+          // Registration successful.
+          console.log('User registered successfully:', userCredential.user);
+          //navigate to login screen
+          navigation.navigate('Login');
+        }
+        catch(error) {
+          // Handle registration error
+          const errorMessage = error.message;
+          console.error('Registration error:', errorMessage);
+        };
+    } else {
+      console.log('Please fill all the fields');
+    }
+  };
 
   const toggleAgreeTerms = () => {
     setAgreeTerms(!agreeTerms);

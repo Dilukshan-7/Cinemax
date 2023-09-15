@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity, TextInput } from 'react-native';
+import auth from '@react-native-firebase/auth';
 //import * as firebase from '@react-native-firebase/auth'; // Import Firebase authentication module
 
   const Login = ({ navigation }) => {
@@ -14,29 +15,30 @@ import { View, Image, StyleSheet, Text, TouchableOpacity, TextInput } from 'reac
     setIsButtonEnabled(isValid);
   }, [email, password]);
 
-  const handleLogin = () => {
-    navigation.navigate('Home');
-  }
+//  const handleLogin = () => {
+//     navigation.navigate('Home');
+//   } 
 
-  // const handleLogin = () => {
-  //   if (email && password) {
-  //     firebase
-  //       .signInWithEmailAndPassword(email, password)
-  //       .then((userCredential) => {
-  //         // Login successful, navigate to another screen.
-  //         console.log('User logged in successfully:', userCredential.user);
-  //         //navigate to another screen here
-  //         // For example, navigate to a "Home" screen
-  //         navigation.navigate('Home');
-  //       })
-  //       .catch((error) => {
-  //         // Handle login error
-  //         const errorMessage = error.message;
-  //         console.error('Login error:', errorMessage);
-  //         //display an error message to the user if needed
-  //       });
-  //   }
-  // };
+  const handleLogin = async () => {
+    if (email !== '' && password !== '' ) {
+        await auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Login successful, navigate to another screen.
+          console.log('User logged in successfully:', userCredential.user);
+          //navigate to another screen here
+          // For example, navigate to a "Home" screen
+          navigation.navigate('Home');
+        })
+        .catch((error) => {
+          // Handle login error
+          const errorMessage = error.message;
+          console.error('Login error:', errorMessage);
+          //display an error message to the user if needed
+        });
+    } else {
+      console.log('Please Provide an Email and Password');
+    }
+  };
 
   const resetPassword = () => {
     navigation.navigate('ResetPassword');
