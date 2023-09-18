@@ -1,5 +1,4 @@
-//import React, {useEffect} from 'react';
-//import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
 import AppNavigator from './AppNavigator';
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
@@ -17,7 +16,7 @@ const App = () => {
       projectId: 'cinemax-67759',
       appId: '1:405436679089:android:4b0e0bd8afcf657af47390',
       storageBucket: "cinemax-67759.appspot.com",
-      //databaseURL: 'https://cinemax-e4f73-default-rtdb.firebaseio.com/',
+      databaseURL: 'https://cinemax-67759-default-rtdb.firebaseio.com/',
     };
       // if (!firebase.apps.length) {
       //   try {
