@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity, TextInput } from 'react-native';
 
-const ResetPassword = ({ navigation }) => {
+const Home = ({ navigation }) => {
 
   const next = () => {
     navigation.navigate('Verification');
@@ -89,4 +89,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ResetPassword;
+export default Home;

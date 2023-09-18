@@ -138,6 +138,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   navigationButtons: {
+    top: -14,
     flexDirection: 'row',
     justifyContent: 'space-between',
     //position: 'absolute',

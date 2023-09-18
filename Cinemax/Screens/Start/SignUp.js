@@ -9,16 +9,12 @@ const SignUp = ({ navigation }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
 
-  // const handleSignUp = () => {
-  //   navigation.navigate('Home');
-  // }
-
   const handleSignUp = async() => {
     if (fullName !== '' && email !== '' && password !== '' && agreeTerms !== '') {     
         try {
           await auth().createUserWithEmailAndPassword(email, password)
           // Registration successful.
-          console.log('User registered successfully:', userCredential.user);
+          console.log('User registered successfully:'/*, userCredential.user*/);
           //navigate to login screen
           navigation.navigate('Login');
         }

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "405436679089",
-    "project_id": "cinemax-67759",
-    "storage_bucket": "cinemax-67759.appspot.com"
+    "project_number": "541205531236",
+    "project_id": "cinemax-a882b",
+    "storage_bucket": "cinemax-a882b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:405436679089:android:4b0e0bd8afcf657af47390",
+        "mobilesdk_app_id": "1:541205531236:android:76b13a063ede0dce2aad71",
         "android_client_info": {
           "package_name": "com.cinemax"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAmyDzTEQ1rLfG1aJkpVT-JargyCguQyus"
+          "current_key": "AIzaSyAHXFBUsqaZWAKTfmgxyDMOt_hh9y1DhWA"
         }
       ],
       "services": {

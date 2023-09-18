@@ -1,51 +1,101 @@
 import React from 'react';
-import AppNavigator from './AppNavigator';
-import { AppRegistry } from 'react-native';
-import { name as appName } from './app.json';
-import {initializeApp} from '@react-native-firebase/app';
-//import auth from '@react-native-firebase/auth';
-//import firebase from '@react-native-firebase/app';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import OnBoarding1 from './Screens/OnBoarding/OnBoarding1';
+import OnBoarding2 from './Screens/OnBoarding/Onboarding2';
+import OnBoarding3 from './Screens/OnBoarding/OnBoarding3';
+import OnBoarding4 from './Screens/OnBoarding/OnBoarding4';
+import OnBoarding5 from './Screens/OnBoarding/OnBoarding5';
+import OnBoarding6 from './Screens/OnBoarding/OnBoarding6';
+import Home from './Screens/Home/Home';
+import Splash from './Screens/Start/Splash';
+import Start from './Screens/Start/Start';
+import SignUp from './Screens/Start/SignUp';
+import Login from './Screens/Start/Login';
+import ResetPassword from './Screens/Start/ResetPassword';
+import NewPassword from './Screens/Start/NewPassword';
+import Verification from './Screens/Start/Verification';
+
+
+const Stack = createStackNavigator();
 
 const App = () => {
-      //   useEffect(() => {
-      //  Initialize Firebase when the app starts (ensure it only runs once)
-  const firebaseConfig = {
-      apiKey: 'AIzaSyAmyDzTEQ1rLfG1aJkpVT-JargyCguQyus',
-      authDomain: 'cinemax-67759.firebaseapp.com',
-      messagingSenderId: '405436679089',        
-      projectId: 'cinemax-67759',
-      appId: '1:405436679089:android:4b0e0bd8afcf657af47390',
-      storageBucket: "cinemax-67759.appspot.com",
-      databaseURL: 'https://cinemax-67759-default-rtdb.firebaseio.com/',
-    };
-      // if (!firebase.apps.length) {
-      //   try {
-           initializeApp(firebaseConfig);
-      //   } catch (error) {
-      //     console.error('Firebase initialization error:', error);
-      //   }
+  return(
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+            name="OnBoarding1"
+            component={OnBoarding1}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+          name="OnBoarding2"
+          component={OnBoarding2}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="OnBoarding3"
+          component={OnBoarding3}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="OnBoarding4"
+          component={OnBoarding4}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="OnBoarding5"
+          component={OnBoarding5}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="OnBoarding6"
+          component={OnBoarding6}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Splash"
+          component={Splash}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Start"
+          component={Start}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUp}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ResetPassword"
+          component={ResetPassword}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="NewPassword"
+          component={NewPassword}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Verification"
+          component={Verification}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+};
 
-        //     const user = auth().currentUser;
-        //   if (user) {
-        //     console.log('User is signed in:', user.displayName);
-        //   } else {
-        //     console.log('User is not signed in');
-        //   }
-        //   }
-        // }, []);
-
-        return (
-              <AppNavigator />  
-        );
-      //};
-
-  // if (__DEV__) {
-  //   // In development mode, log errors to the console
-  //   console.error = (error) => {
-  //     // You can customize how errors are displayed here
-  //     console.log('Custom error logging:', error);
-  //   };
-  // }
-}
-AppRegistry.registerComponent(appName, () => App);
 export default App;
