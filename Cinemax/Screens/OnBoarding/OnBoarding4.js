@@ -35,7 +35,7 @@ const OnBoarding4 = () => {
               <Image source={require('../../assets/Slider1.png')} style={styles.slider} />
             </View>
             <TouchableOpacity onPress={nextPage} style={styles.navigationButtons}>
-              <Image source={require('../../assets/next2.png')} style={styles.nextImage} />
+              <Image source={require('../../assets/next1.png')} style={styles.nextImage} />
               <Image source={require('../../assets/backIcon.png')} style={styles.iconBack} />
             </TouchableOpacity>
 

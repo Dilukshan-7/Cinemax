@@ -1,7 +1,11 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 const ResetPassword = ({ navigation }) => {
+
+  const back = () => {
+    navigation.navigate('Login');
+  };
 
   const next = () => {
     navigation.navigate('Verification');
@@ -9,10 +13,12 @@ const ResetPassword = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Image
-        source={require('../../assets/Back.png')}
-        style={styles.backIcon}
-      />
+      <TouchableOpacity onPress={back}>
+        <Image
+          source={require('../../assets/Back.png')}
+          style={styles.backIcon}
+        />
+      </TouchableOpacity>
       <Text style={styles.text}>Reset Password</Text>
       <Text style={styles.desc}>Recover your account password</Text>
 
@@ -37,8 +43,8 @@ const styles = StyleSheet.create({
   backIcon: {
     width: 32,
     height: 32,
-    top: 50,
-    right: 350,
+    bottom: 230,
+    right: 150,
     position: 'absolute',
   },
   text: {

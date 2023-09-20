@@ -106,6 +106,9 @@ import auth from '@react-native-firebase/auth';
       <TouchableOpacity onPress={resetPassword}>
         <Text style={styles.login}>Forgot Password</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={resetPassword}>
+        <Text style={styles.login1}>Login with Phone number</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -206,6 +209,13 @@ const styles = StyleSheet.create({
     top: -110,
     left: 100,
   },
+  login1: {
+    color: '#12CDD9',
+    fontSize: 17,
+    letterSpacing: 1,
+    top: 0,
+    left: 0,
+  }
 });
 
 export default Login;

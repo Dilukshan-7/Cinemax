@@ -7,7 +7,6 @@ import OnBoarding3 from './Screens/OnBoarding/OnBoarding3';
 import OnBoarding4 from './Screens/OnBoarding/OnBoarding4';
 import OnBoarding5 from './Screens/OnBoarding/OnBoarding5';
 import OnBoarding6 from './Screens/OnBoarding/OnBoarding6';
-import Home from './Screens/Home/Home';
 import Splash from './Screens/Start/Splash';
 import Start from './Screens/Start/Start';
 import SignUp from './Screens/Start/SignUp';
@@ -15,7 +14,11 @@ import Login from './Screens/Start/Login';
 import ResetPassword from './Screens/Start/ResetPassword';
 import NewPassword from './Screens/Start/NewPassword';
 import Verification from './Screens/Start/Verification';
-
+import Home from './Screens/Home/Home';
+import Search from './Screens/Home/Search';
+import Download from './Screens/Home/Download';
+import MovieDetails from './Screens/Home/MovieDetails';
+import UpcomingMovie from './Screens/Home/Upcomming';
 
 const Stack = createStackNavigator();
 
@@ -59,6 +62,21 @@ const App = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
+          name="Search"
+          component={Search}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Download"
+          component={Download}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="MovieDetails"
+          component={MovieDetails}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
           name="Splash"
           component={Splash}
           options={{headerShown: false}}
@@ -91,6 +109,11 @@ const App = () => {
         <Stack.Screen
           name="Verification"
           component={Verification}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="UpcomingMovie"
+          component={UpcomingMovie}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
