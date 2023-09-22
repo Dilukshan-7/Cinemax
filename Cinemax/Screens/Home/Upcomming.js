@@ -21,15 +21,20 @@ const UpcomingMovie = () => {
   const navigation = useNavigation();
 
   const [activeTab, setActiveTab] = React.useState(1);
-  const changeTab = tab => {
+  const selected = tab => {
     setActiveTab(tab);
   };
+
+  const home = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <View style={styles.window}>
       <View style={{flex: 1}}>
         <ScrollView>
           <View style={styles.header}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={home}>
               <Image source={back} />
             </TouchableOpacity>
             <Text style={styles.title}>Upcoming Movie</Text>
@@ -41,7 +46,7 @@ const UpcomingMovie = () => {
               contentContainerStyle={{flexDirection: 'row', gap: 8}}
               showsHorizontalScrollIndicator={false}>
               <View style={styles.tabs}>
-                <TouchableOpacity onPress={() => changeTab(1)}>
+                <TouchableOpacity onPress={() => selected(1)}>
                   <Text
                     style={
                       activeTab === 1
@@ -51,7 +56,7 @@ const UpcomingMovie = () => {
                     All
                   </Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => changeTab(2)}>
+                <TouchableOpacity onPress={() => selected(2)}>
                   <Text
                     style={
                       activeTab === 2
@@ -61,7 +66,7 @@ const UpcomingMovie = () => {
                     Comedy
                   </Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => changeTab(3)}>
+                <TouchableOpacity onPress={() => selected(3)}>
                   <Text
                     style={
                       activeTab === 3
@@ -71,7 +76,7 @@ const UpcomingMovie = () => {
                     Animation
                   </Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => changeTab(4)}>
+                <TouchableOpacity onPress={() => selected(4)}>
                   <Text
                     style={
                       activeTab === 4

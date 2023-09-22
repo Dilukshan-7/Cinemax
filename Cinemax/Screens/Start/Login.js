@@ -15,10 +15,6 @@ import auth from '@react-native-firebase/auth';
     setIsButtonEnabled(isValid);
   }, [email, password]);
 
-//  const handleLogin = () => {
-//     navigation.navigate('Home');
-//   } 
-
   const handleLogin = async () => {
     if (email !== '' && password !== '' ) {
         await auth().signInWithEmailAndPassword(email, password)

@@ -67,6 +67,25 @@ const Verification = () => {
   const handleOTP4Change = number => {
     setOtp4(number);
   };
+  const Continue = () => {
+    const otp = `${otp1}${otp2}${otp3}${otp4}`;
+  
+    // Verify the OTP using Firebase.
+    firebase.auth().confirmPasswordReset(otp).then(() => {
+      // Navigate to the NewPassword screen.
+      navigation.navigate('NewPassword');
+    }).catch((error) => {
+      // Handle the error.
+      const errorMessage = error.message;
+      console.error('Registration error:', errorMessage);
+    });
+  };
+  const Resend = () => {
+    const email = navigation.getParam('email');
+  
+    // Send the OTP to the user's email address again.
+    firebase.auth().sendPasswordResetEmail(email);
+  };
 
   return (
     <View style={styles.window}>
@@ -118,12 +137,12 @@ const Verification = () => {
       </View>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('NewPassword')}>
+        onPress={Continue}>
         <Text style={styles.btnText}>Continue</Text>
       </TouchableOpacity>
       <View style={{flexDirection: 'row', gap: 5, alignSelf: 'center'}}>
         <Text style={styles.textStyle3}>Didn't receive code?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={Resend}>
           <Text style={[styles.textStyle3, {color: '#12CDD9'}]}>Resend</Text>
         </TouchableOpacity>
       </View>

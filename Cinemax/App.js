@@ -19,6 +19,10 @@ import Search from './Screens/Home/Search';
 import Download from './Screens/Home/Download';
 import MovieDetails from './Screens/Home/MovieDetails';
 import UpcomingMovie from './Screens/Home/Upcomming';
+import Profile from './Screens/profile/profile';
+import EditProfile from './Screens/profile/EditProfile';
+import Language from './Screens/profile/Language';
+import Notifications from './Screens/profile/Notifications';
 
 const Stack = createStackNavigator();
 
@@ -114,6 +118,26 @@ const App = () => {
         <Stack.Screen
           name="UpcomingMovie"
           component={UpcomingMovie}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="EditProfile"
+          component={EditProfile}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Language"
+          component={Language}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Notifications"
+          component={Notifications}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
