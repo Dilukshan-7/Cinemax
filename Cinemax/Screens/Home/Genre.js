@@ -17,7 +17,7 @@ const Genre = () => {
   const img2 = require('../../assets/GenreImg2.png');
   const img3 = require('../../assets/GenreImg3.png');
   const img4 = require('../../assets/GenreImg4.png');
-  const img5 = require('../../assets/iGenreImg5.png');
+  const img5 = require('../../assets/GenreImg5.png');
   const img6 = require('../../assets/GenreImg6.png');
   const img7 = require('../../assets/GenreImg7.png');
   const img8 = require('../../assets/GenreImg8.png');

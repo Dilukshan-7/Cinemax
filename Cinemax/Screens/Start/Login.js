@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { View, Image, StyleSheet, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, Image, StyleSheet, Text, TouchableOpacity, TextInput, Modal, Button } from 'react-native';
 import auth from '@react-native-firebase/auth';
-//import * as firebase from '@react-native-firebase/auth'; // Import Firebase authentication module
 
-  const Login = ({ navigation }) => {
+const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const [error, setError] = useState('');
+  const [isErrorModalVisible, setIsErrorModalVisible] = useState(false);
+  
+  const back = () => {
+    navigation.navigate('Start');
+  };
 
   useEffect(() => {
     // Check if both email and password fields have valid input
@@ -16,23 +21,18 @@ import auth from '@react-native-firebase/auth';
   }, [email, password]);
 
   const handleLogin = async () => {
-    if (email !== '' && password !== '' ) {
-        await auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          // Login successful, navigate to another screen.
-          console.log('User logged in successfully:', userCredential.user);
-          //navigate to another screen here
-          // For example, navigate to a "Home" screen
-          navigation.navigate('Home');
-        })
-        .catch((error) => {
-          // Handle login error
-          const errorMessage = error.message;
-          console.error('Login error:', errorMessage);
-          //display an error message to the user if needed
-        });
-    } else {
-      console.log('Please Provide an Email and Password');
+    if (email !== '' && password !== '') {
+      try {
+        await auth().signInWithEmailAndPassword(email, password);
+        // Login successful, navigate to another screen.
+        navigation.navigate('Home');
+      } catch (error) {
+        // Handle login error
+        const errorMessage = error.message;
+        //console.error('Login error:', errorMessage);
+        setError("Invalid credentials \n please recheck your email and password");
+        setIsErrorModalVisible(true);
+      }
     }
   };
 
@@ -40,13 +40,9 @@ import auth from '@react-native-firebase/auth';
     navigation.navigate('ResetPassword');
   };
 
-  const back = () => {
-    navigation.navigate('Start');
+  const closeErrorModal = () => {
+    setIsErrorModalVisible(false);
   };
-
-  const home = () => {
-    navigation.navigate('Home');
-  }
 
   return (
     <View style={styles.container}>
@@ -105,9 +101,24 @@ import auth from '@react-native-firebase/auth';
       <TouchableOpacity onPress={resetPassword}>
         <Text style={styles.login1}>Login with Phone number</Text>
       </TouchableOpacity>
+
+      {/* Error Modal */}
+      <Modal
+        visible={isErrorModalVisible}
+        animationType="slide"
+        transparent={true}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalText}>{error}</Text>
+            <Button title="OK" onPress={closeErrorModal}/>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
@@ -211,7 +222,26 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     top: 0,
     left: 0,
-  }
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    elevation: 5,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+  },
+  modalText: {
+    fontSize: 16,
+    marginBottom: 10,
+    textAlign: 'center',
+  },
 });
 
 export default Login;

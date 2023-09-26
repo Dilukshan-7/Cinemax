@@ -18,6 +18,8 @@ const Verification = () => {
   const [isFocused2, setIsFocused2] = React.useState(false);
   const [isFocused3, setIsFocused3] = React.useState(false);
   const [isFocused4, setIsFocused4] = React.useState(false);
+  
+  const navigation = useNavigation();
 
   const back = () => {
     navigation.navigate('ResetPassword');
@@ -53,8 +55,6 @@ const Verification = () => {
     setIsFocused4(false);
   };
 
-  const navigation = useNavigation();
-
   const handleOTP1Change = number => {
     setOtp1(number);
   };
@@ -69,7 +69,7 @@ const Verification = () => {
   };
   const Continue = () => {
     const otp = `${otp1}${otp2}${otp3}${otp4}`;
-  
+
     // Verify the OTP using Firebase.
     firebase.auth().confirmPasswordReset(otp).then(() => {
       // Navigate to the NewPassword screen.
@@ -77,12 +77,12 @@ const Verification = () => {
     }).catch((error) => {
       // Handle the error.
       const errorMessage = error.message;
-      console.error('Registration error:', errorMessage);
+      console.error('Error verifying OTP:', errorMessage);
+      alert('Invalid OTP. Please try again.');
     });
   };
-  const Resend = () => {
-    const email = navigation.getParam('email');
-  
+  const Resend = async() => {
+    const email = navigation.getParam('email'); 
     // Send the OTP to the user's email address again.
     firebase.auth().sendPasswordResetEmail(email);
   };

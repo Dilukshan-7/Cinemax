@@ -19,10 +19,17 @@ import Search from './Screens/Home/Search';
 import Download from './Screens/Home/Download';
 import MovieDetails from './Screens/Home/MovieDetails';
 import UpcomingMovie from './Screens/Home/Upcomming';
+import MostPopular from './Screens/Home/MostPopular';
 import Profile from './Screens/profile/profile';
 import EditProfile from './Screens/profile/EditProfile';
 import Language from './Screens/profile/Language';
 import Notifications from './Screens/profile/Notifications';
+import PremiumAccount from './Screens/profile/PremiumAcc';
+import PaymentMethod from './Screens/profile/PaymentMethod';
+import PrivacyPolicy from './Screens/profile/PrivacyPolicy';
+import Genre from './Screens/Home/Genre';
+import Trailer from './/Screens/Home/Trailer';
+import Wishlist from './Screens/Home/Wishlist';
 
 const Stack = createStackNavigator();
 
@@ -120,6 +127,11 @@ const App = () => {
           component={UpcomingMovie}
           options={{headerShown: false}}
         />
+         <Stack.Screen
+          name="MostPopular"
+          component={MostPopular}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="Profile"
           component={Profile}
@@ -138,6 +150,36 @@ const App = () => {
         <Stack.Screen
           name="Notifications"
           component={Notifications}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="PremiumAccount"
+          component={PremiumAccount}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="PaymentMethod"
+          component={PaymentMethod}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="PrivacyPolicy"
+          component={PrivacyPolicy}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Genre"
+          component={Genre}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Trailer"
+          component={Trailer}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Wishlist"
+          component={Wishlist}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

@@ -10,7 +10,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 
 const Trailer = () => {
-  const back = require('../../assets/BackArrow.png');
+  const back = require('../../assets/Back.png');
   const img1 = require('../../assets/TrailerVideo.png');
   const calendar = require('../../assets/calendar.png');
   const film = require('../../assets/film.png');

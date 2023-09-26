@@ -1,47 +1,61 @@
 import React, { useState } from 'react';
-import { View, Image, StyleSheet, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, TextInput } from 'react-native';
 import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native';
 
 const ResetPassword = ({ navigation }) => {
+  const [email, setEmail] = useState('');
 
-    const [email, setEmail] = useState('');
-  
-    const handleResetPassword = async () => {
-      try {
-        await auth().sendPasswordResetEmail(email);
-        alert('A password reset email has been sent to your email address.');
-        navigation.navigate('Verification');
-      } catch (error) {
-        alert('An error occurred while trying to reset your password.');
-      }
-    };
+  const handleResetPassword = async () => {
 
-    const Verification = () => {
-      navigation.navigate('Login');
-    };
+    function generateOTP() {
+      // Generate a random 4-digit OTP
+      const otp = Math.floor(Math.random() * (9999 - 1000)) + 1000;   
+      // Return the OTP
+      return otp;
+    }
+
+    try {
+      // Generate an OTP
+      const otp = generateOTP();
+
+      // Send the OTP to the user's email address
+      await auth().sendPasswordResetEmail(email, {
+        actionCodeSettings: {
+          url: 'https://example.com/verification',
+          handleCodeInApp: true,
+        },
+      });
+
+      // Navigate to the Verification page
+      navigation.navigate('Verification', { otp });
+    } catch (error) {
+      alert('An error occurred while trying to reset your password.'. error);
+      console.log(error);
+    }
+  };
+
+  // const Verification = () => {
+  //   const navigation = useNavigation();
+  //   const otp = navigation.getParam('otp');
+
+  //   // Verify the user's OTP
+
+  //   // Once the OTP is verified, navigate to the next page
+  //   navigation.navigate('Next');
+  // };
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={Verification}>
-      <Image
-        source={require('../../assets/Back.png')}
-        style={styles.backIcon}
-      />
-      </TouchableOpacity>     
       <Text style={styles.text}>Reset Password</Text>
       <Text style={styles.desc}>Recover your account password</Text>
 
-      {/* Email Input */}
-      <View style={styles.inputContainer}>
-        <Text style={styles.inputLabel}>Email Address</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Tiffanyjersey@gmail.com"
-          placeholderTextColor="#92929D"
-          onChangeText={(text) => setEmail(text)}
-          value={email}
-        />
-      </View>
+      <TextInput
+        style={styles.input}
+        placeholder="Email Address"
+        value={email}
+        onChangeText={setEmail}
+      />
 
       <TouchableOpacity
         style={styles.button}
@@ -51,7 +65,8 @@ const ResetPassword = ({ navigation }) => {
       </TouchableOpacity>
     </View>
   );
-}
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -59,48 +74,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  backIcon: {
-    width: 32,
-    height: 32,
-    bottom: 200,
-    right: 150,
-    position: 'absolute',
-  },
   text: {
     color: 'white',
-    top: -90,
-    left: 15,
-    width: 227,
-    height: 34,
     fontSize: 28,
-    letterSpacing: 0.7,
     fontWeight: '500',
   },
   desc: {
     color: '#92929D',
-    top: -70,
-    left: 8,
-    width: 230,
-    height: 20,
     fontSize: 14,
-    letterSpacing: 0.5,
     fontWeight: '500',
     textAlign: 'center',
   },
-  inputContainer: {
-    width: 340,
-    marginTop: 20,
-  },
-  inputLabel: {
-    color: 'white',
-    fontSize: 16,
-    top: -35,
-    left: 15,
-    marginBottom: 5,
-  },
   input: {
     backgroundColor: 'transparent',
-    top: -50,
     borderWidth: 1,
     borderColor: '#252836',
     borderRadius: 50,

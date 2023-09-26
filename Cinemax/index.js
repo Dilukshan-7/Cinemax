@@ -19,6 +19,6 @@ const firebaseConfig = {
     databaseURL: 'https://cinemax-a882b-default-rtdb.firebaseio.com/',  
 };
          
-    //initializeApp(firebaseConfig);
+    //initializeApp(firebaseConfig, 'Cinemax');
 
 AppRegistry.registerComponent(appName, () => App);

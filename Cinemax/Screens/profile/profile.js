@@ -93,7 +93,8 @@ const Profile = () => {
         </TouchableOpacity>
         <View style={styles.container1}>
           <Text style={styles.textStyle2}>Account</Text>
-          <TouchableOpacity style={styles.container2}>
+          <TouchableOpacity onPress={() => navigation.navigate('PremiumAccount')}
+           style={styles.container2}>
             <View style={styles.container3}>
               <Image source={profile} />
               <Text style={styles.textStyle5}>Member</Text>
