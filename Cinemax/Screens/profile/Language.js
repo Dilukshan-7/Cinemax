@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: 'Montserrat',
     fontSize: 16,
     color: '#fff',
   },
@@ -89,14 +89,14 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   textStyle1: {
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: 'Montserrat',
     fontSize: 16,
     fontWeight: '400',
     letterSpacing: 0.9,
     color: '#fff',
   },
   textStyle2: {
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 12,
     fontWeight: '600',
     color: '#696974',

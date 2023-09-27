@@ -224,7 +224,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 12, 
   },
   image: {
-    // Adjust the image width to account for spacing
     resizeMode: 'cover',
   },
   bottomNavigation: {
@@ -268,12 +267,11 @@ const styles = StyleSheet.create({
   },
   textStyle1: {
     color: '#fff',
-    //fontFamily: 'Montserrat-SemiBold',
     fontSize: 16,
   },
   textStyle2: {
     color: '#92929D',
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 12,
   },
   searchBar: {
@@ -304,7 +302,7 @@ const styles = StyleSheet.create({
   searchInput: {
     width: 239,
     color: '#fff',
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 14,
   },
   movieSlider: {
@@ -329,7 +327,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     textAlign: 'center',
     paddingTop: 8,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 12,
   },
   activeTab: {
@@ -339,7 +337,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     textAlign: 'center',
     paddingTop: 8,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 12,
   },
   popularSection: {
@@ -347,7 +345,7 @@ const styles = StyleSheet.create({
   },
   textStyle3: {
     color: '#12CDD9',
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 14,
   },
   movieCards: {
@@ -369,7 +367,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     width: 65,
     height: 20,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 10,
     textAlign: 'center',
     textAlignVertical: 'center',
@@ -378,7 +376,7 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     width: 43,
     height: 20,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 12,
     textAlign: 'center',
     textAlignVertical: 'center',
@@ -395,7 +393,7 @@ const styles = StyleSheet.create({
     marginTop: '50%',
   },
   title: {
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: 'Montserrat',
     fontSize: 16,
     color: '#fff',
     textAlign: 'center',

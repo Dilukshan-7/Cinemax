@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: 'Montserrat',
     fontSize: 16,
     color: '#fff',
   },
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     textAlign: 'center',
     paddingTop: 8,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 12,
   },
   activeTab: {
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     textAlign: 'center',
     paddingTop: 8,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 12,
   },
   container: {
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   textStyle1: {
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 12,
     color: '#92929D',
   },
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
   },
   navText: {
     color: '#12CDD9',
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 14,
   },
 });

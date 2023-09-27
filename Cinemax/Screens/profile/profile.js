@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1F1D2B',
   },
   title: {
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: 'Montserrat',
     fontSize: 16,
     color: '#fff',
     textAlign: 'center',
@@ -277,17 +277,17 @@ const styles = StyleSheet.create({
   },
   textStyle1: {
     color: '#12CDD9',
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 14,
   },
   textStyle2: {
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: 'Montserrat',
     fontSize: 16,
     color: '#fff',
   },
   textStyle3: {
     color: '#B1B1B1',
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 14,
   },
   banner: {
@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
   },
   textStyle4: {
     color: '#fff',
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'Montserrat',
     fontSize: 14,
     width: 231,
     marginTop: 8,
@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
   },
   textStyle5: {
     color: '#fff',
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     fontSize: 14,
     paddingLeft: 22,
   },
@@ -358,7 +358,7 @@ const styles = StyleSheet.create({
   btnText: {
     color: '#12CDD9',
     fontSize: 16,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat',
     textAlign: 'center',
   },
   centeredModal: {
@@ -375,12 +375,12 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   textStyle6: {
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: 'Montserrat',
     fontSize: 16,
     color: '#fff',
   },
   textStyle7: {
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'Montserrat',
     fontSize: 12,
     color: '#92929D',
     textAlign: 'center',
