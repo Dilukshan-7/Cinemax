@@ -37,7 +37,7 @@ const Language = () => {
           <Text style={styles.textStyle1}>Bahasa Indonesia</Text>
         </View>
         <View style={[styles.container, {height: 400}]}>
-          <Text style={styles.textStyle2}>Suggested Languages</Text>
+          <Text style={styles.textStyle2}>Other Languages</Text>
           <Text style={styles.textStyle1}>Chinese</Text>
           <View style={styles.line} />
           <Text style={styles.textStyle1}>Croatian</Text>
@@ -91,11 +91,14 @@ const styles = StyleSheet.create({
   textStyle1: {
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 16,
+    fontWeight: '400',
+    letterSpacing: 0.9,
     color: '#fff',
   },
   textStyle2: {
     fontFamily: 'Montserrat-Medium',
     fontSize: 12,
+    fontWeight: '600',
     color: '#696974',
   },
   line: {

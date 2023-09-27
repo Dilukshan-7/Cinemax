@@ -91,7 +91,9 @@ const UpcomingMovie = () => {
           </View>
           <View style={styles.container}>
             <View style={styles.card}>
+            <TouchableOpacity onPress={() => navigation.navigate('Trailer')}>
               <Image source={img1} />
+              </TouchableOpacity>
               <Text style={styles.title}>The Batman</Text>
               <View style={{flexDirection: 'row', gap: 12}}>
                 <Image source={calendar} />
@@ -102,9 +104,7 @@ const UpcomingMovie = () => {
               </View>
             </View>
             <View style={styles.card}>
-              <TouchableOpacity onPress={() => navigation.navigate('Trailer')}>
                 <Image source={img2} />
-              </TouchableOpacity>
               <Text style={styles.title}>Black Panther: Wakanda Forever</Text>
               <View style={{flexDirection: 'row', gap: 12}}>
                 <Image source={calendar} />

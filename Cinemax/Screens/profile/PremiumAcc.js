@@ -24,7 +24,7 @@ const PremiumAccount = () => {
   return (
     <View style={styles.window}>
         <View style={styles.header}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
             <Image source={back} />
           </TouchableOpacity>
           <Text style={styles.title}>VIP</Text>
